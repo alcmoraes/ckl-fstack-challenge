@@ -3,7 +3,7 @@ services:
     mysql:
         image: mysql
         volumes:
-            - ./database/data:/var/lib/mysql
+            - ./db:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: "root"
             MYSQL_DATABASE: "ckl_challenge"
