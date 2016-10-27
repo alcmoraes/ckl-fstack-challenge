@@ -5,13 +5,89 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>CKL full-stack challenge</title>
-        <meta name="description" content="CKL full-stack challenge">
+        <title>CKL challenge</title>
+        <meta name="description" content="CKL challenge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'client/css/application.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/application.min.css' %}">
     </head>
     <body>
-        <div id="ckl-challenge-app"></div>
-        <script src="{% static 'client/js/application.min.js' %}"></script>
+        <div class="nav-stick">
+            <nav class="navbar navbar-ckl">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <img src="{% static 'img/menu@2x.png' %}"/>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="{% static 'img/logo@2x.png' %}"/>
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../navbar-static-top/">POLITICS</a></li>
+                            <li><a href="../navbar-fixed-top/">BUSINESS</a></li>
+                            <li><a href="../navbar-fixed-top/">TECH</a></li>
+                            <li><a href="../navbar-fixed-top/">SCIENCE</a></li>
+                            <li><a href="../navbar-fixed-top/">SPORTS</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+        </div>
+        <div class="container content-roll">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="content-wrapper promo">
+                        <div class="content-category politics">
+                            <span>POLITICS</span>
+                        </div>
+                        <img src="{% static 'img/news_01@2x.png' %}" alt="" class="content-picture img-responsive">
+                        <h4 class="content-title">Obama Offers Hopeful Vision While Noting Nation’s Fears</h4>
+                        <div class="author-cta">
+                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" width="45" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Creed Bratton</span>
+                        </div>
+                        <p class="excerpt">
+                            In his last State of the Union address, President Obama sought to paint a hopeful portrait. But he acknowledged that many Americans felt shut out of a political and economic system they view as rigged.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="content-wrapper">
+                        <div class="content-category tech">
+                            <span>TECH</span>
+                        </div>
+                        <img src="{% static 'img/news_02@2x.jpg' %}" alt="" class="content-picture img-responsive">
+                        <h4 class="content-title">Didi Kuaidi, The Company Beating Uber In China, Opens Its API To Third Party Apps</h4>
+                        <div class="author-cta">
+                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" width="45" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Creed Bratton</span>
+                        </div>
+                        <p class="excerpt">
+                            One day after Uber updated its API to add ‘content experiences’ for passengers, the U.S. company’s biggest rival — Didi Kuaidi in China — has opened its own platform up by releasing an SDK for developers and third-parties.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="content-wrapper">
+                        <div class="content-category science">
+                            <span>SCIENCE</span>
+                        </div>
+                        <img src="{% static 'img/news_03@2x.jpg' %}" alt="" class="content-picture img-responsive">
+                        <h4 class="content-title">NASA Formalizes Efforts To Protect Earth From Asteroids</h4>
+                        <div class="author-cta">
+                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Alexandre Henrique Shailesh Zeta-Jones</span>
+                        </div>
+                        <p class="excerpt">
+                            Last week, NASA announced a new program called the Planetary Defense Coordination Office (PDCO) which will coordinate NASA’s efforts for detecting and tracking near-Earth objects (NEOs). If a large object comes hurtling toward our planet…
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="main-topics-hr" />
+        </div>
+        <!--<div id="ckl-challenge-app"></div>-->
+        <script src="{% static 'js/application.min.js' %}"></script>
     </body>
 </html>

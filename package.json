@@ -6,7 +6,6 @@
   "devDependencies": {
     "babelify": "^6.4.0",
     "alt": "^0.17.8",
-    "bootstrap": "3.3.7",
     "browserify": "11.1.0",
     "envify": "3.4.1",
     "font-awesome": "4.4.0",

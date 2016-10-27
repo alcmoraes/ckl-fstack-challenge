@@ -56,9 +56,7 @@ class CKLChallengeIndex extends React.Component {
             <div className="app-index">
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="jumbotron">
-                            <h1>Welcome to <strong>CKL-CHALLENGE</strong></h1>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

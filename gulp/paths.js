@@ -33,7 +33,7 @@ paths.js = {
 	vendors: [
 		paths.vendor + 'jquery/dist/jquery.min.js',
 		paths.vendor + 'moment/min/moment-with-locales.min.js',
-		paths.vendor + 'bootstrap/dist/js/bootstrap.min.js',
+		paths.src + 'vendors/bootstrap.js',
 		paths.vendor + 'toastr/build/toastr.min.js'
 	],
 	src: paths.src + 'js/base.es6',
@@ -44,7 +44,7 @@ paths.js = {
 paths.css = {
 	vendors: [
 		paths.vendor + 'font-awesome/css/font-awesome.min.css',
-		paths.vendor + 'bootstrap/dist/css/bootstrap.min.css',
+		paths.src + 'css/bootstrap.css',
 		paths.vendor + 'toastr/build/toastr.min.css'
 	],
 	src: paths.src + 'sass/base.scss',
