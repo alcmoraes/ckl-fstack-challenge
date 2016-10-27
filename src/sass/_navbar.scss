@@ -1,114 +1,159 @@
-.nav-stick {
+.cheesecake-nav {
     margin-bottom: 76px;
-}
-.navbar-ckl {
+    background-color: white;
+    border-bottom: solid 1px #979797;
     img {
         max-height: 19px;
     }
-    .navbar-brand {
-        padding: 6px 0;
-        height: 56px;
-        img {
-            max-height: 45px;
+    .navbar-header {
+        width: 100%;
+        .navbar-brand {
+            margin: 0 auto;
+            padding: 6px 0;
+            height: 56px;
+            img {
+                max-height: 45px;
+            }
+        }
+        .navbar-toggle {
+            float: left;
+            margin-left: 15px;
+            display: block;
         }
     }
-    background-color: white;
-    border-bottom: solid 1px #979797;
-    .nav > li > a {
-        padding: 18px 18px;
-        &:focus, &:hover {
-            background-color: transparent;
-        }
-        font-size: 14px;
-        color: #3E433E;
-        font-family: 'Lato', sans-serif;
-        font-weight: 17px;
-    }
-    .navbar-toggle {
-        float: left;
-        margin-left: 15px;
-    }
-}
-
-@media (min-width: 750px) {
-    .container > .navbar-collapse {
-        width: 100%!important;
-        left: 0px;
-    }
-}
-
-@media (min-width: 320px) {
-    .navbar-toggle {
-        float: left;
-        margin-left: 15px;
-        display: block!important;
-    }
-    .navbar {
-        border-radius: 0px;
-    }
-    .container > .navbar-collapse {
+    .navbar-collapse {
         position: absolute;
         width: 100%;
-        float: left;
-        padding: 15px 15px;
-    }
-    .navbar .container .navbar-header {
-        display: block;
+        left: 0px;
         float: none;
-    }
-    .navbar .container .navbar-brand {
-        margin: 0 auto;
-        display: block;
-        width: 45px;
-        float: none;
-    }
-    .navbar-nav {
-        margin: 0;
-    }
-    .nav {
-        & > li {
+        .nav > li {
+            &> a {
+                padding: 18px 18px;
+                &:focus, &:hover {
+                    background-color: transparent;
+                }
+                font-size: 14px;
+                color: #3E433E;
+                font-family: 'Lato', sans-serif;
+                font-weight: 17px;
+            }
             float: none;
             position: relative;
             display: block;
         }
     }
-    .navbar-right {
-        float: none!important;
-        margin: 0;
-    }
-}
-
-@media (max-width: 1170px) {
-    .nav-stick {
-        margin-bottom: 55px;
-    }
 }
 
 @media (min-width: 1170px) {
-    .navbar-toggle {
-        float: left;
-        margin-left: 15px;
-        display: none!important;
-    }
-    .navbar-collapse.collapse {
-        margin-right: -15px;
-        float: right!important;
-        position: relative;
-        width: auto!important;
-        padding: 0px;
-    }
-    .nav {
-        margin-right: 15px;
-        & > li {
-            float: left;
+    .cheesecake-nav {
+        .navbar-header {
+            width: auto!important;
+        }
+        .navbar-collapse {
+            display: block!important;
+            position: relative!important;
+            width: auto!important;
+            left: auto!important;
+            float: right!important;
+            .nav {
+                &> li {
+                    float: left!important;
+                }
+            }
+        }
+        .navbar-toggle {
+            display: none!important;
         }
     }
-    .navbar .container .navbar-brand {
-        margin-left: 0px;
-        width: auto;
-        float: left;
-    }
-    .navbar .container .navbar-header {
-        float: left;
+}
+@media (max-width: 1170px) {
+    .cheesecake-nav {
+        .navbar-brand {
+            margin: 0 auto;
+            display: block;
+            width: 45px;
+            float: none;
+        }
+        .navbar-collapse {
+            display: none;
+            background-color: #FFFFFF;
+            z-index: 1;
+            margin-top: 1px;
+            height: 100%;
+            width: 100%;
+            left: 0px;
+        }
     }
 }
+
+// @media (min-width: 750px) {
+//     .container > .navbar-collapse {
+//         width: 100%!important;
+//         left: 0px;
+//     }
+// }
+
+// @media (min-width: 320px) {
+//     .navbar {
+//         border-radius: 0px;
+//     }
+//     .container > .navbar-collapse {
+//         position: absolute;
+//         width: 100%;
+//         float: left;
+//         padding: 15px 15px;
+//     }
+//     .navbar .container .navbar-header {
+//         display: block;
+//         float: none;
+//     }
+//     .navbar-nav {
+//         margin: 0;
+//     }
+//     .nav {
+//         & > li {
+//             float: none;
+//             position: relative;
+//             display: block;
+//         }
+//     }
+//     .navbar-right {
+//         float: none!important;
+//         margin: 0;
+//     }
+// }
+
+// @media (max-width: 1170px) {
+//     .nav-stick {
+//         margin-bottom: 55px;
+//     }
+// }
+
+// @media (min-width: 1170px) {
+//     .navbar-toggle {
+//         float: left;
+//         margin-left: 15px;
+//         display: none!important;
+//     }
+//     .navbar-collapse.collapse {
+//         margin-right: -15px;
+//         float: right!important;
+//         position: relative;
+//         width: auto!important;
+//         padding: 0px;
+//     }
+//     .nav {
+//         margin-right: 15px;
+//         & > li {
+//             float: left;
+//         }
+//     }
+//     .navbar .container .navbar-brand {
+//         margin-left: 0px;
+//         width: auto;
+//         float: left;
+//     }
+//     .navbar .container .navbar-header {
+//         float: left;
+//     }
+// }

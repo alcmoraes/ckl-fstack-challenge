@@ -11,29 +11,27 @@
         <link rel="stylesheet" href="{% static 'css/application.min.css' %}">
     </head>
     <body>
-        <div class="nav-stick">
-            <nav class="navbar navbar-ckl">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <img src="{% static 'img/menu@2x.png' %}"/>
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            <img src="{% static 'img/logo@2x.png' %}"/>
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="../navbar-static-top/">POLITICS</a></li>
-                            <li><a href="../navbar-fixed-top/">BUSINESS</a></li>
-                            <li><a href="../navbar-fixed-top/">TECH</a></li>
-                            <li><a href="../navbar-fixed-top/">SCIENCE</a></li>
-                            <li><a href="../navbar-fixed-top/">SPORTS</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
+        <nav class="cheesecake-nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <img src="{% static 'img/menu@2x.png' %}"/>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'img/logo@2x.png' %}"/>
+                    </a>
                 </div>
-            </nav>
-        </div>
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-right">
+                        <li><a href="../navbar-static-top/">POLITICS</a></li>
+                        <li><a href="../navbar-fixed-top/">BUSINESS</a></li>
+                        <li><a href="../navbar-fixed-top/">TECH</a></li>
+                        <li><a href="../navbar-fixed-top/">SCIENCE</a></li>
+                        <li><a href="../navbar-fixed-top/">SPORTS</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
         <div class="container content-roll">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -41,10 +39,10 @@
                         <div class="content-category politics">
                             <span>POLITICS</span>
                         </div>
-                        <img src="{% static 'img/news_01@2x.png' %}" alt="" class="content-picture img-responsive">
+                        <img src="/static/img/news_01@2x.png" alt="" class="content-picture img-responsive">
                         <h4 class="content-title">Obama Offers Hopeful Vision While Noting Nation’s Fears</h4>
                         <div class="author-cta">
-                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" width="45" class="author-avatar img-circle" alt="">
+                            <img src="/static/img/author@2x.jpg" width="45" class="author-avatar img-circle" alt="">
                             <span class="author-by">by Creed Bratton</span>
                         </div>
                         <p class="excerpt">
@@ -57,10 +55,10 @@
                         <div class="content-category tech">
                             <span>TECH</span>
                         </div>
-                        <img src="{% static 'img/news_02@2x.jpg' %}" alt="" class="content-picture img-responsive">
+                        <img src="/static/img/news_02@2x.jpg" alt="" class="content-picture img-responsive">
                         <h4 class="content-title">Didi Kuaidi, The Company Beating Uber In China, Opens Its API To Third Party Apps</h4>
                         <div class="author-cta">
-                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" width="45" class="author-avatar img-circle" alt="">
+                            <img src="/static/img/author@2x.jpg" width="45" class="author-avatar img-circle" alt="">
                             <span class="author-by">by Creed Bratton</span>
                         </div>
                         <p class="excerpt">
@@ -73,10 +71,10 @@
                         <div class="content-category science">
                             <span>SCIENCE</span>
                         </div>
-                        <img src="{% static 'img/news_03@2x.jpg' %}" alt="" class="content-picture img-responsive">
+                        <img src="/static/img/news_03@2x.jpg" alt="" class="content-picture img-responsive">
                         <h4 class="content-title">NASA Formalizes Efforts To Protect Earth From Asteroids</h4>
                         <div class="author-cta">
-                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="author-avatar img-circle" alt="">
+                            <img src="/static/img/author@2x.jpg" class="author-avatar img-circle" alt="">
                             <span class="author-by">by Alexandre Henrique Shailesh Zeta-Jones</span>
                         </div>
                         <p class="excerpt">
@@ -86,6 +84,53 @@
                 </div>
             </div>
             <hr class="main-topics-hr" />
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="content-wrapper">
+                        <div class="content-category sports">
+                            <span>SPORTS</span>
+                        </div>
+                        <h4 class="content-title">For Some Atlanta Hawks, a Revved-Up Game of Uno Is Diversion No. 1</h4>
+                        <div class="author-cta">
+                            <img src="/static/img/author@2x.jpg" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Creed Bratton</span>
+                        </div>
+                        <p class="excerpt">
+                            The favored in-flight pastime of a group of players including Al Horford, Kent Bazemore and Dennis Schroder is a schoolchildren’s card game with some added twists.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="content-wrapper">
+                        <div class="content-category tech">
+                            <span>TECH</span>
+                        </div>
+                        <h4 class="content-title">Picking a Windows 10 Security Package</h4>
+                        <div class="author-cta">
+                            <img src="/static/img/author@2x.jpg" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Creed Bratton</span>
+                        </div>
+                        <p class="excerpt">
+                            Oscar the Grouch has a recycling bin and Big Bird has moved to a tree as the children’s classic debuts on HBO, aiming at a generation that doesn’t distinguish between TV and mobile screens.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="content-wrapper">
+                        <div class="content-category science">
+                            <span>SCIENCE</span>
+                        </div>
+                        <h4 class="content-title">As U.S. Modernizes Nuclear Weapons, ‘Smaller’ Leaves Some Uneasy</h4>
+                        <div class="author-cta">
+                            <img src="/static/img/author@2x.jpg" class="author-avatar img-circle" alt="">
+                            <span class="author-by">by Creed Bratton</span>
+                        </div>
+                        <p class="excerpt">
+                            The Energy Department and the Pentagon have been readying a weapon with a build-it-smaller approach, setting off a philosophical clash in the world of nuclear arms.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--<div id="ckl-challenge-app"></div>-->
         <script src="{% static 'js/application.min.js' %}"></script>
