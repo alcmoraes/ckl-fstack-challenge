@@ -58,6 +58,9 @@
                 color: #3E433E;
                 font-family: 'Lato', sans-serif;
                 font-weight: 17px;
+                &.active {
+                    color: #4A90E2;
+                }
             }
             float: none;
             position: relative;

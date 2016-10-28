@@ -21,12 +21,11 @@ class CKLChallengeIndex extends React.Component {
         super(props);
 
         this.state = {
-            category: this.props.params.category || false,
             feeds: []
         }
 
         this.onChange = (state) => { this.setState(state) }
-        FeedsActions.fetchFeeds(this.state.category);
+        FeedsActions.fetchFeeds();
     }
 
     /**

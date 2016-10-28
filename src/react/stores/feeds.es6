@@ -25,7 +25,7 @@ class FeedsStore {
     }
 
     handleFetchFeeds() {
-        this.feeds = false;
+        this.feeds = [];
     }
 
 }

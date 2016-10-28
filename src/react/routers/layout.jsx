@@ -82,8 +82,16 @@ class AppLayout extends React.Component {
     }
 
     setCategory(category) {
-        this.context.router.push(category);
-        FeedsActions.fetchFeeds(category);
+        
+        CKLChallengeActions.preLoader(true);
+
+        /**
+         * So fast, much lightning
+         */        
+        setTimeout(() => {
+            FeedsActions.fetchFeeds(category);
+        }, 500);
+        
     }
 
     /**
@@ -95,7 +103,7 @@ class AppLayout extends React.Component {
             <div className="app-wrapper">
                 <PreLoader active={this.state.preLoader} />
                 <CKLNavBar onMenuClick={this.setCategory} />
-                <div className="container">
+                <div className={"container " + (this.state.preLoader ? "fade-in" : "fade-out")}>
                     {this.props.children}
                 </div>
             </div>

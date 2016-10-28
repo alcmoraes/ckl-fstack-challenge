@@ -18,11 +18,7 @@ class FeedsActions {
     fetchFeeds(category) {
         return (dispatch) => {
             let xmlhttp, response;
-
-            CKLChallengeActions.preLoader(true);
-
             xmlhttp = new XMLHttpRequest();
-
             xmlhttp.onreadystatechange = () => {
                 CKLChallengeActions.preLoader(false);
                 if (xmlhttp.readyState === 4) {

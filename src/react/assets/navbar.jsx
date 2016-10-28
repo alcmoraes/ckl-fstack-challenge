@@ -23,7 +23,8 @@ class CKLNavBarComponent extends React.Component {
         this.onMenuClick = this.onMenuClick.bind(this);
 
         this.state = {
-            nav: false
+            nav: false,
+            category: false
         }
     }
 
@@ -32,7 +33,7 @@ class CKLNavBarComponent extends React.Component {
     }
 
     onMenuClick(cat) {
-        this.setState({nav: false});
+        this.setState({nav: false, category: cat});
         this.props.onMenuClick(cat);
     }
 
@@ -52,11 +53,11 @@ class CKLNavBarComponent extends React.Component {
                         <div className="container">
                             <ul className="nav navbar-right">
                                 <li>
-                                    <a onTouchTap={this.onMenuClick.bind(this, false)} href="">ALL</a>
+                                    <a className={!this.state.category ? "active" : ""} onTouchTap={this.onMenuClick.bind(this, false)} href="javascript:void(0)">ALL</a>
                                 </li>
                                 {this.categories.map((cat, i) =>
                                     (<li key={i}>
-                                        <a onTouchTap={this.onMenuClick.bind(this, cat)} href="">{cat.toUpperCase()}</a>
+                                        <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.onMenuClick.bind(this, cat)} href="javascript:void(0)">{cat.toUpperCase()}</a>
                                     </li>)
                                 )}
                             </ul>

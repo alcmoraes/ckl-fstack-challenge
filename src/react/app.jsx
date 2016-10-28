@@ -21,7 +21,6 @@ if(document.getElementById('ckl-challenge-app')) {
         <Router history={hashHistory}>
             <Route path="/" component={AppLayout}>
                 <IndexRoute component={CKLChallengeIndex} />
-                <Route path=":category" component={CKLChallengeIndex} />
                 <Route path="*" component={NotFound}/>
             </Route>
         </Router>
