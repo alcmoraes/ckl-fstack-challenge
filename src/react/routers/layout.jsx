@@ -1,7 +1,14 @@
 import React from 'react';
 import connectToStores from 'alt/utils/connectToStores';
 import PreLoader from '../assets/pre-loader';
+
 import CKLChallengeStore from '../stores/ckl-challenge';
+import CKLChallengeActions from '../actions/ckl-challenge';
+
+import CKLNavBar from '../assets/navbar.jsx';
+
+import FeedsStore from '../stores/feeds';
+import FeedsActions from '../actions/feeds';
 
 /**
 * CKLChallenge\Routers\Layout component
@@ -19,15 +26,25 @@ class AppLayout extends React.Component {
      */
     constructor(props) {
         super(props);
+         
          this.onChange = this.onChange.bind(this);
-         this.state = CKLChallengeStore.getState();
+         this.setCategory = this.setCategory.bind(this);
+
+         this.state = {
+             ...CKLChallengeStore.getState(),
+             ...FeedsStore.getState()
+        };
+    }
+
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired
     }
 
     /**
      * Stores used by this component
      */
     static getStores() {
-        return [CKLChallengeStore]
+        return [CKLChallengeStore, FeedsStore]
     }
 
     /**
@@ -35,7 +52,8 @@ class AppLayout extends React.Component {
      */
     static getPropsFromStores() {
         return {
-            ...CKLChallengeStore.getState()
+            ...CKLChallengeStore.getState(),
+            ...FeedsStore.getState()
         }
     }
 
@@ -44,6 +62,7 @@ class AppLayout extends React.Component {
      */
     componentDidMount() {
         CKLChallengeStore.listen(this.onChange);
+        FeedsStore.listen(this.onChange);
     }
 
     /**
@@ -51,6 +70,7 @@ class AppLayout extends React.Component {
      */
     componentWillUnmount() {
         CKLChallengeStore.unlisten(this.onChange);
+        FeedsStore.unlisten(this.onChange);
     }
 
     /**
@@ -61,15 +81,21 @@ class AppLayout extends React.Component {
         this.setState(state);
     }
 
+    setCategory(category) {
+        this.context.router.push(category);
+        FeedsActions.fetchFeeds(category);
+    }
+
     /**
      * Component Render
      */
     render() {
 
         return (
-            <div className="wrapper">
+            <div className="app-wrapper">
                 <PreLoader active={this.state.preLoader} />
-                <div className="apps">
+                <CKLNavBar onMenuClick={this.setCategory} />
+                <div className="container">
                     {this.props.children}
                 </div>
             </div>

@@ -3,6 +3,13 @@
 @import 'typography';
 @import 'content';
 
-body, html {
+body {
     min-width: 320px;
+    padding-top: calc(56px + 56px);
+}
+
+@media (min-width: 1170px) {
+    body {
+        padding-top: calc(56px + 76px);
+    }
 }

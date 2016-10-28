@@ -33,7 +33,7 @@ paths.js = {
 	vendors: [
 		paths.vendor + 'jquery/dist/jquery.min.js',
 		paths.vendor + 'moment/min/moment-with-locales.min.js',
-		paths.src + 'vendors/bootstrap.js',
+		paths.src + 'js/vendors/bootstrap.js',
 		paths.vendor + 'toastr/build/toastr.min.js'
 	],
 	src: paths.src + 'js/base.es6',

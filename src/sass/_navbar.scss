@@ -1,16 +1,27 @@
 .cheesecake-nav {
-    margin-bottom: 76px;
-    background-color: white;
+    position: fixed;
+    top: 0;
+    max-height: 56px;
+    z-index: 2;
     border-bottom: solid 1px #979797;
+    width: 100%;
+    background-color: white;
     img {
         max-height: 19px;
     }
     .navbar-header {
+        height: 56px;
+        margin-right: 0;
+        margin-left: 0;
         width: 100%;
         .navbar-brand {
             margin: 0 auto;
             padding: 6px 0;
+            display: block;
+            width: 45px;
             height: 56px;
+            float: none;
+            margin: 0 auto;
             img {
                 max-height: 45px;
             }
@@ -22,13 +33,24 @@
         }
     }
     .navbar-collapse {
-        position: absolute;
+        margin-left: calc(-100% - 15px);
+        overflow-y: scroll;
+        position: fixed;
+        height: calc(100% - 56px);
+        background-color: #FFFFFF;
         width: 100%;
-        left: 0px;
-        float: none;
-        .nav > li {
-            &> a {
-                padding: 18px 18px;
+        padding: 10px 10px;
+        &.on {
+            margin-left: -15px;
+        }
+        .container {
+            padding: 0;
+        }
+        .nav {
+            width: 100%;
+            position: relative;
+            &> li > a {
+                padding: 17px 15px;
                 &:focus, &:hover {
                     background-color: transparent;
                 }
@@ -50,9 +72,14 @@
             width: auto!important;
         }
         .navbar-collapse {
-            display: block!important;
+            .container {
+                width: auto;
+            }
+            padding: 0px!important;
             position: relative!important;
             width: auto!important;
+            margin: 0;
+            top: 0;
             left: auto!important;
             float: right!important;
             .nav {
@@ -66,94 +93,17 @@
         }
     }
 }
-@media (max-width: 1170px) {
-    .cheesecake-nav {
-        .navbar-brand {
-            margin: 0 auto;
-            display: block;
-            width: 45px;
-            float: none;
-        }
-        .navbar-collapse {
-            display: none;
-            background-color: #FFFFFF;
-            z-index: 1;
-            margin-top: 1px;
-            height: 100%;
-            width: 100%;
-            left: 0px;
+@media (min-width: 750px) {
+    .navbar-collapse {
+        left: 0px;
+        top: 56px;
+        float: left;
+        &.on {
+            margin-left: 0px!important;
         }
     }
+    .navbar-right {
+        float: left!important;
+        margin-right: 0px;
+    }
 }
-
-// @media (min-width: 750px) {
-//     .container > .navbar-collapse {
-//         width: 100%!important;
-//         left: 0px;
-//     }
-// }
-
-// @media (min-width: 320px) {
-//     .navbar {
-//         border-radius: 0px;
-//     }
-//     .container > .navbar-collapse {
-//         position: absolute;
-//         width: 100%;
-//         float: left;
-//         padding: 15px 15px;
-//     }
-//     .navbar .container .navbar-header {
-//         display: block;
-//         float: none;
-//     }
-//     .navbar-nav {
-//         margin: 0;
-//     }
-//     .nav {
-//         & > li {
-//             float: none;
-//             position: relative;
-//             display: block;
-//         }
-//     }
-//     .navbar-right {
-//         float: none!important;
-//         margin: 0;
-//     }
-// }
-
-// @media (max-width: 1170px) {
-//     .nav-stick {
-//         margin-bottom: 55px;
-//     }
-// }
-
-// @media (min-width: 1170px) {
-//     .navbar-toggle {
-//         float: left;
-//         margin-left: 15px;
-//         display: none!important;
-//     }
-//     .navbar-collapse.collapse {
-//         margin-right: -15px;
-//         float: right!important;
-//         position: relative;
-//         width: auto!important;
-//         padding: 0px;
-//     }
-//     .nav {
-//         margin-right: 15px;
-//         & > li {
-//             float: left;
-//         }
-//     }
-//     .navbar .container .navbar-brand {
-//         margin-left: 0px;
-//         width: auto;
-//         float: left;
-//     }
-//     .navbar .container .navbar-header {
-//         float: left;
-//     }
-// }

@@ -11,6 +11,8 @@ import CKLChallengeActions from '../actions/ckl-challenge';
 class CKLChallengeStore {
     constructor() {
 
+        this.preLoader = true;
+
         this.bindListeners({
             onPreLoader: CKLChallengeActions.PRE_LOADER
         });
@@ -18,7 +20,7 @@ class CKLChallengeStore {
     }
 
     onPreLoader(show) {
-        this.setState({'preLoader': show});
+        this.preLoader = show;
     }
 
 }

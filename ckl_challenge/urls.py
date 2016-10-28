@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from client import views
 from feed.models import Feed 
 from django.contrib import admin
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers, filters, serializers, viewsets
 
 class FeedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -25,8 +25,10 @@ class FeedSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'category', 'title', 'excerpt', 'image', 'author_name', 'author_avatar')
 
 class FeedViewSet(viewsets.ModelViewSet):
-    queryset = Feed.objects.all()
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('category',)
     serializer_class = FeedSerializer
+    queryset = Feed.objects.all()
 
 router = routers.DefaultRouter()
 router.register(r'feeds', FeedViewSet)

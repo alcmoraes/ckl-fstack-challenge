@@ -15,7 +15,7 @@ paths = require('./paths');
 exports.reactBundleWatchify = browserify({
 	entries: [paths.react.src],
 	transform: [babelify.configure({
-		optional: ['es7.decorators']
+		optional: ['es7.decorators', 'es7.classProperties']
 	}), reactify, envify],
 	extensions: ['.jsx', '.js', '.es6']
 });
