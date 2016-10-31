@@ -1,16 +1,17 @@
 .app-wrapper > .container {
-    -webkit-transition: opacity ease-in-out 1s;
-    -moz-transition: opacity ease-in-out 1s;
-    transition: opacity ease-in-out 1s;
     &.fade-in {
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
         opacity: 0
     }
     &.fade-out {
+        -webkit-transition: opacity ease-in-out 1s;
+        -moz-transition: opacity ease-in-out 1s;
+        transition: opacity ease-in-out 1s;
         opacity: 1
     }
 }
-
-
 
 .content-row {
     display: flex;

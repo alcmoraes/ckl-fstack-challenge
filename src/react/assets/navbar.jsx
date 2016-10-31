@@ -28,12 +28,17 @@ class CKLNavBarComponent extends React.Component {
         }
     }
 
+    scrollTop() {
+        $("html, body").stop().animate({scrollTop:0}, '500', 'swing');
+    }
+
     toggleNav() {
         this.setState({nav: !this.state.nav});
     }
 
     onMenuClick(cat) {
         this.setState({nav: false, category: cat});
+        this.scrollTop();
         this.props.onMenuClick(cat);
     }
 
@@ -53,11 +58,11 @@ class CKLNavBarComponent extends React.Component {
                         <div className="container">
                             <ul className="nav navbar-right">
                                 <li>
-                                    <a className={!this.state.category ? "active" : ""} onTouchTap={this.onMenuClick.bind(this, false)} href="javascript:void(0)">ALL</a>
+                                    <a className={!this.state.category ? "active" : ""} onTouchTap={this.state.category ? this.onMenuClick.bind(this, false) : this.toggleNav} href="javascript:void(0)">ALL</a>
                                 </li>
                                 {this.categories.map((cat, i) =>
                                     (<li key={i}>
-                                        <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.onMenuClick.bind(this, cat)} href="javascript:void(0)">{cat.toUpperCase()}</a>
+                                        <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.state.category != cat ? this.onMenuClick.bind(this, cat) : this.toggleNav} href="javascript:void(0)">{cat.toUpperCase()}</a>
                                     </li>)
                                 )}
                             </ul>
@@ -71,7 +76,8 @@ class CKLNavBarComponent extends React.Component {
 }
 
 CKLNavBarComponent.propTypes = {
-    onMenuClick: React.PropTypes.func
+    onMenuClick: React.PropTypes.func,
+    navIs: React.PropTypes.bool
 };
 
 module.exports = CKLNavBarComponent;

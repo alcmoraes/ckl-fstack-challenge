@@ -24,8 +24,6 @@ class FeedsActions {
                     CKLChallengeActions.preLoader(false);
                     response = JSON.parse(xmlhttp.responseText);
                     this.actions.setFeeds(xmlhttp.status === 200 ? response : []);
-                } else {
-
                 }
             };
             xmlhttp.open('GET', '/api/feeds' + (category ? '/?category=' + category : ''), true);

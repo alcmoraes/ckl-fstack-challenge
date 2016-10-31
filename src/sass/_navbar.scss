@@ -1,8 +1,8 @@
 .cheesecake-nav {
+    z-index: 4;
     position: fixed;
     top: 0;
     max-height: 56px;
-    z-index: 2;
     border-bottom: solid 1px #979797;
     width: 100%;
     background-color: white;
@@ -27,8 +27,9 @@
             }
         }
         .navbar-toggle {
+            padding: 9px 12px;
             float: left;
-            margin-left: 15px;
+            margin-left: 0px;
             display: block;
         }
     }
@@ -44,13 +45,14 @@
             margin-left: -15px;
         }
         .container {
+            width: auto;
             padding: 0;
         }
         .nav {
             width: 100%;
             position: relative;
             &> li > a {
-                padding: 17px 15px;
+                padding: 15px 30px;
                 &:focus, &:hover {
                     background-color: transparent;
                 }
@@ -75,7 +77,7 @@
             width: auto!important;
         }
         .navbar-collapse {
-            .container {
+            &> .container {
                 width: auto;
             }
             overflow-y: auto!important;
@@ -88,6 +90,9 @@
             float: right!important;
             .nav {
                 &> li {
+                    &> a {
+                        padding: 17px 15px;
+                    }
                     float: left!important;
                 }
             }
@@ -103,7 +108,10 @@
         top: 56px;
         float: left;
         &.on {
-            margin-left: 0px!important;
+            max-width: 750px;
+            width: 750px;
+            left: 50%;
+            margin-left: -375px!important;
         }
     }
     .navbar-right {

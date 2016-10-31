@@ -86,6 +86,8 @@ class AppLayout extends React.Component {
         FeedsActions.fetchFeeds(category);
     }
 
+
+
     /**
      * Component Render
      */
