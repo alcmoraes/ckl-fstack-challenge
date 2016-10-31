@@ -20,10 +20,12 @@ class FeedsActions {
             let xmlhttp, response;
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = () => {
-                CKLChallengeActions.preLoader(false);
                 if (xmlhttp.readyState == 4) {
+                    CKLChallengeActions.preLoader(false);
                     response = JSON.parse(xmlhttp.responseText);
                     this.actions.setFeeds(xmlhttp.status === 200 ? response : []);
+                } else {
+
                 }
             };
             xmlhttp.open('GET', '/api/feeds' + (category ? '/?category=' + category : ''), true);
