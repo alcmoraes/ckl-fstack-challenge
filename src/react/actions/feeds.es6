@@ -11,7 +11,7 @@ import CKLChallengeActions from './ckl-challenge';
  * @license MIT | http://opensource.org/licenses/MIT
  */
 class FeedsActions {
-    
+
     /**
      * Load Feeds via API
      */
@@ -21,13 +21,15 @@ class FeedsActions {
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = () => {
                 CKLChallengeActions.preLoader(false);
-                if (xmlhttp.readyState === 4) {
+                if (xmlhttp.readyState == 4) {
                     response = JSON.parse(xmlhttp.responseText);
                     this.actions.setFeeds(xmlhttp.status === 200 ? response : []);
                 }
             };
             xmlhttp.open('GET', '/api/feeds' + (category ? '/?category=' + category : ''), true);
+            xmlhttp.setRequestHeader('Accept', 'application/json');
             xmlhttp.setRequestHeader('Content-type', 'application/json');
+            xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xmlhttp.send();
         }
     }
