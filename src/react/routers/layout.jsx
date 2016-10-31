@@ -82,16 +82,8 @@ class AppLayout extends React.Component {
     }
 
     setCategory(category) {
-        
         CKLChallengeActions.preLoader(true);
-
-        /**
-         * So fast, much lightning
-         */        
-        setTimeout(() => {
-            FeedsActions.fetchFeeds(category);
-        }, 500);
-        
+        FeedsActions.fetchFeeds(category);
     }
 
     /**
