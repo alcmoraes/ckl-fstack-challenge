@@ -15,6 +15,11 @@ class ContentComponent extends React.Component {
 
     }
 
+    /**
+     * Go to given URL
+     * 
+     * @params String url The url to go to
+     */
     goLink(url) {
         window.location = url;
     }

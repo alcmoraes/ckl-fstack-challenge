@@ -8,6 +8,7 @@ import CKLChallengeActions from '../actions/ckl-challenge';
 * @license MIT | http://opensource.org/licenses/MIT
 */
 class CKLChallengeStore {
+    
     constructor() {
 
         this.preLoader = true;
@@ -18,6 +19,11 @@ class CKLChallengeStore {
 
     }
 
+    /**
+     * Determine if the preLoader is visible.
+     * 
+     * @param {Boolean} show If should be visible
+     */
     onPreLoader(show) {
         this.preLoader = show;
     }

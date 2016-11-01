@@ -22,20 +22,33 @@ class CKLNavBarComponent extends React.Component {
         }
     }
 
+    /**
+     * Simply scroll the user to top
+     */
     scrollTop() {
         $("html, body").stop().animate({scrollTop:0}, '500', 'swing');
     }
 
+    /**
+     * Toggle the navigation
+     */
     toggleNav() {
         this.setState({nav: !this.state.nav});
     }
 
+    /**
+     * Executed after a category were chosen from the navigation bar
+     */
     onMenuClick(cat) {
         this.setState({nav: false, category: cat});
         this.scrollTop();
         this.props.onMenuClick(cat);
     }
 
+    /**
+     * Method to create a unique array of categories
+     * from given feeds array
+     */
     uniqueCategories() {
         let categories = [];
         for(let i = 0; i < this.props.persistentFeeds.length; i++) {

@@ -2,9 +2,9 @@ from __future__ import unicode_literals
 from django.utils import timezone
 from django.db import models
 
-"""
-
-"""
+# Feed class
+#
+# Used to define our Django Model for the Feed object
 class Feed(models.Model):
     url = models.CharField(max_length=255, unique=True)
     category = models.CharField(max_length=255)

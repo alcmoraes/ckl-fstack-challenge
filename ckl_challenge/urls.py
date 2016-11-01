@@ -19,11 +19,17 @@ from feed.models import Feed
 from django.contrib import admin
 from rest_framework import routers, filters, serializers, viewsets
 
+# FeedSerializer class
 class FeedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Feed
-        fields = ('url', 'category', 'title', 'excerpt', 'image', 'author_name', 'author_avatar')
+        fields = ('url', 'category', 'title', 'excerpt', 'image', 
+                  'author_name', 'author_avatar')
 
+# FeedViewSet class
+#
+# Here we add 'category' as a filter at our API and register
+# our viewset for Django
 class FeedViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = ('category',)

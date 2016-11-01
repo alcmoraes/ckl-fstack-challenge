@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import sys
 sys.path.append('/var/www')
 
@@ -7,9 +8,6 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'ckl_challenge.settings'
 
 import django
 django.setup()
-
-# import django
-# django.setup()
 
 # Scrapy settings for crunchspider project
 #

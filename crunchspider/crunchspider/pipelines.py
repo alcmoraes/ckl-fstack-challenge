@@ -6,6 +6,9 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
+# StoreFeedPipeline class
+#
+# Used as a pipeline to save the DjangoModel element
 class StoreFeedPipeline(object):
     def process_item(self, item, spider):
         item.save()

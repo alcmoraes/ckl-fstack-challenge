@@ -25,6 +25,16 @@ class FeedsStore {
         this.feeds = [];
     }
 
+    /**
+     * Set the given feeds
+     * 
+     * @param {Object} feeds Containing two properties:
+     *                       'data' and 'persistent'.
+     *                       In case persistent is true
+     *                       it sets a 'persistentFeeds'
+     *                       object containing the current
+     *                       feeds.
+     */
     handleSetFeeds(feeds) {
         if(feeds.persistent) this.persistentFeeds = feeds.data;
         this.feeds = feeds.data;
