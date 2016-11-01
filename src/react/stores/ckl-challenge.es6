@@ -7,7 +7,6 @@ import CKLChallengeActions from '../actions/ckl-challenge';
 * @author Alexandre Moraes | http://github.com/alcmoraes
 * @license MIT | http://opensource.org/licenses/MIT
 */
-
 class CKLChallengeStore {
     constructor() {
 
