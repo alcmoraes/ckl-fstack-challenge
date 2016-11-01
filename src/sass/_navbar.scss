@@ -1,0 +1,130 @@
+/*
+ * Navigation bar stylesheet
+ *
+ * @author Alexandre Moraes | http://github.com/alcmoraes
+ * @license MIT | http://opensource.org/licenses/MIT
+ */
+ .cheesecake-nav {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    max-height: 56px;
+    border-bottom: solid 1px #979797;
+    width: 100%;
+    background-color: white;
+    img {
+        max-height: 19px;
+    }
+    .navbar-header {
+        height: 56px;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+        .navbar-brand {
+            margin: 0 auto;
+            padding: 6px 0;
+            display: block;
+            width: 45px;
+            height: 56px;
+            float: none;
+            margin: 0 auto;
+            img {
+                max-height: 45px;
+            }
+        }
+        .navbar-toggle {
+            padding: 9px 12px;
+            float: left;
+            margin-left: 0px;
+            display: block;
+        }
+    }
+    .navbar-collapse {
+        margin-left: calc(-100% - 15px);
+        overflow-y: scroll;
+        position: fixed;
+        height: calc(100% - 56px);
+        background-color: #FFFFFF;
+        width: 100%;
+        padding: 10px 10px;
+        &.on {
+            margin-left: -15px;
+        }
+        .container {
+            width: auto;
+            padding: 0;
+        }
+        .nav {
+            width: 100%;
+            position: relative;
+            &> li > a {
+                padding: 15px 30px;
+                &:focus, &:hover {
+                    background-color: transparent;
+                }
+                font-size: 14px;
+                color: #3E433E;
+                font-family: 'Lato', sans-serif;
+                font-weight: 17px;
+                &.active {
+                    color: #4A90E2;
+                }
+            }
+            float: none;
+            position: relative;
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 1170px) {
+    .cheesecake-nav {
+        .navbar-header {
+            width: auto!important;
+        }
+        .navbar-collapse {
+            &> .container {
+                width: auto;
+            }
+            overflow-y: auto!important;
+            padding: 0px!important;
+            position: relative!important;
+            width: auto!important;
+            margin: 0;
+            top: 0;
+            left: auto!important;
+            float: right!important;
+            .nav {
+                &> li {
+                    &.mobile-category {
+                        display: none;
+                    }
+                    &> a {
+                        padding: 17px 15px;
+                    }
+                    float: left!important;
+                }
+            }
+        }
+        .navbar-toggle {
+            display: none!important;
+        }
+    }
+}
+@media (min-width: 750px) {
+    .navbar-collapse {
+        left: 0px;
+        top: 56px;
+        float: left;
+        &.on {
+            max-width: 750px;
+            width: 750px;
+            left: 50%;
+            margin-left: -375px!important;
+        }
+    }
+    .navbar-right {
+        float: left!important;
+        margin-right: 0px;
+    }
+}

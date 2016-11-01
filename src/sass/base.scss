@@ -1,0 +1,21 @@
+/*
+ * Base stylesheet
+ *
+ * @author Alexandre Moraes | http://github.com/alcmoraes
+ * @license MIT | http://opensource.org/licenses/MIT
+ */
+@import 'spinner';
+@import 'navbar';
+@import 'typography';
+@import 'content';
+
+body {
+    min-width: 320px;
+    padding-top: calc(56px + 56px);
+}
+
+@media (min-width: 1170px) {
+    body {
+        padding-top: calc(56px + 76px);
+    }
+}
