@@ -11,20 +11,14 @@ class CKLNavBarComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        this.categories = [
-            "politics",
-            "business",
-            "tech",
-            "science",
-            "sports"
-        ];
-
         this.toggleNav = this.toggleNav.bind(this);
         this.onMenuClick = this.onMenuClick.bind(this);
+        this.uniqueCategories = this.uniqueCategories.bind(this);
 
         this.state = {
             nav: false,
-            category: false
+            category: false,
+            categories: []
         }
     }
 
@@ -42,7 +36,18 @@ class CKLNavBarComponent extends React.Component {
         this.props.onMenuClick(cat);
     }
 
+    uniqueCategories() {
+        let categories = [];
+        for(let i = 0; i < this.props.persistentFeeds.length; i++) {
+            if(categories.indexOf(this.props.persistentFeeds[i].category) < 0) {
+                categories.push(this.props.persistentFeeds[i].category);
+            }
+        }
+        return categories;
+    }
+
     render() {
+
         return (
             <nav className="cheesecake-nav">
                 <div className="container">
@@ -60,7 +65,7 @@ class CKLNavBarComponent extends React.Component {
                                 <li>
                                     <a className={!this.state.category ? "active" : ""} onTouchTap={this.state.category ? this.onMenuClick.bind(this, false) : this.toggleNav} href="javascript:void(0)">ALL</a>
                                 </li>
-                                {this.categories.map((cat, i) =>
+                                {this.uniqueCategories().splice(0,5).map((cat, i) =>
                                     (<li key={i}>
                                         <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.state.category != cat ? this.onMenuClick.bind(this, cat) : this.toggleNav} href="javascript:void(0)">{cat.toUpperCase()}</a>
                                     </li>)
@@ -77,7 +82,7 @@ class CKLNavBarComponent extends React.Component {
 
 CKLNavBarComponent.propTypes = {
     onMenuClick: React.PropTypes.func,
-    navIs: React.PropTypes.bool
+    persistentFeeds: React.PropTypes.array,
 };
 
 module.exports = CKLNavBarComponent;

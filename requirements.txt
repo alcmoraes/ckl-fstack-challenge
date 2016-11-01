@@ -2,3 +2,5 @@ Django
 MySQL-python
 djangorestframework
 django-filter
+scrapy
+scrapy-djangoitem

@@ -5,6 +5,8 @@ import CKLChallengeStore from '../../stores/ckl-challenge';
 import FeedsStore from '../../stores/feeds';
 import FeedsActions from '../../actions/feeds';
 
+import Content from '../../components/content';
+
 /**
 * CKLChallenge\Routers\Index
 *
@@ -25,6 +27,7 @@ class CKLChallengeIndex extends React.Component {
         }
 
         this.onChange = (state) => { this.setState(state) }
+
         FeedsActions.fetchFeeds();
     }
 
@@ -78,22 +81,7 @@ class CKLChallengeIndex extends React.Component {
                     <div className="row content-row">
                         {this.state.feeds.slice(0, 3).map((feed, i) => {
                             return(
-                                <div key={i} className={i == 0 ? "col-lg-6 col-md-12 col-sm-12" : "col-lg-3 col-md-6 col-sm-6 col-xs-12"}>
-                                    <div className={(i == 0 ? "promo" : "") + " content-wrapper"} >
-                                        <div className={feed.category + " content-category"}>
-                                            <span>{feed.category}</span>
-                                        </div>
-                                        <img src={feed.image} alt="" className="content-picture img-responsive" />
-                                        <h4 className="content-title">{feed.title}</h4>
-                                        <div className="author-cta">
-                                            <img src={feed.author_avatar} className="author-avatar img-circle" />
-                                            <span className="author-by">by {feed.author_name}</span>
-                                        </div>
-                                        <p className="excerpt">
-                                            {feed.excerpt}
-                                        </p>
-                                    </div>
-                                </div>
+                                <Content key={i} featured={true} promo={i == 0 ? true : false} feed={feed} />
                             )
                         })}
                     </div>
@@ -101,21 +89,7 @@ class CKLChallengeIndex extends React.Component {
                     <div className="row content-row">
                         {this.state.feeds.slice(3).map((feed, i) => {
                             return (
-                                <div key={i} className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                    <div className="content-wrapper">
-                                        <div className={feed.category + " content-category"}>
-                                            <span>{feed.category}</span>
-                                        </div>
-                                        <h4 className="content-title">{feed.title}</h4>
-                                        <div className="author-cta">
-                                            <img src={feed.author_avatar} className="author-avatar img-circle" />
-                                            <span className="author-by">by {feed.author_name}</span>
-                                        </div>
-                                        <p className="excerpt">
-                                            {feed.excerpt}
-                                        </p>
-                                    </div>
-                                </div>
+                                <Content key={i} feed={feed} />
                             )
                         })}
                     </div>

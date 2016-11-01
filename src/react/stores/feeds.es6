@@ -12,6 +12,7 @@ class FeedsStore {
     constructor() {
 
         this.feeds = [];
+        this.persistentFeeds = [];
 
         this.bindListeners({
             handleFetchFeeds: FeedsActions.FETCH_FEEDS,
@@ -20,12 +21,13 @@ class FeedsStore {
 
     }
 
-    handleSetFeeds(feeds) {
-        this.feeds = feeds;
-    }
-
     handleFetchFeeds() {
         this.feeds = [];
+    }
+
+    handleSetFeeds(feeds) {
+        if(feeds.persistent) this.persistentFeeds = feeds.data;
+        this.feeds = feeds.data;
     }
 
 }

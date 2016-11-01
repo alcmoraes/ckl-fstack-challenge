@@ -1,11 +1,11 @@
 import React from 'react';
 import connectToStores from 'alt/utils/connectToStores';
-import PreLoader from '../assets/pre-loader';
+import PreLoader from '../components/pre-loader';
 
 import CKLChallengeStore from '../stores/ckl-challenge';
 import CKLChallengeActions from '../actions/ckl-challenge';
 
-import CKLNavBar from '../assets/navbar.jsx';
+import CKLNavBar from '../components/navbar.jsx';
 
 import FeedsStore from '../stores/feeds';
 import FeedsActions from '../actions/feeds';
@@ -86,8 +86,6 @@ class AppLayout extends React.Component {
         FeedsActions.fetchFeeds(category);
     }
 
-
-
     /**
      * Component Render
      */
@@ -96,7 +94,7 @@ class AppLayout extends React.Component {
         return (
             <div className="app-wrapper">
                 <PreLoader active={this.state.preLoader} />
-                <CKLNavBar onMenuClick={this.setCategory} />
+                <CKLNavBar persistentFeeds={this.state.persistentFeeds} onMenuClick={this.setCategory} />
                 <div className={"container " + (this.state.preLoader ? "fade-in" : "fade-out")}>
                     {this.props.children}
                 </div>

@@ -12,33 +12,38 @@ import CKLChallengeActions from './ckl-challenge';
  */
 class FeedsActions {
 
+    request(url, callback) {
+        let xmlhttp, response;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = () => {
+            if (xmlhttp.readyState == 4) {
+                CKLChallengeActions.preLoader(false);
+                callback(JSON.parse(xmlhttp.status === 200 ? xmlhttp.responseText : []));
+            }
+        };
+        xmlhttp.open('GET', url, true);
+        xmlhttp.setRequestHeader('Accept', 'application/json');
+        xmlhttp.setRequestHeader('Content-type', 'application/json');
+        xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xmlhttp.send();
+    }
+
     /**
      * Load Feeds via API
      */
     fetchFeeds(category) {
         return (dispatch) => {
-            let xmlhttp, response;
-            xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = () => {
-                if (xmlhttp.readyState == 4) {
-                    CKLChallengeActions.preLoader(false);
-                    response = JSON.parse(xmlhttp.responseText);
-                    this.actions.setFeeds(xmlhttp.status === 200 ? response : []);
-                }
-            };
-            xmlhttp.open('GET', '/api/feeds' + (category ? '/?category=' + category : ''), true);
-            xmlhttp.setRequestHeader('Accept', 'application/json');
-            xmlhttp.setRequestHeader('Content-type', 'application/json');
-            xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            xmlhttp.send();
+            this.actions.request('/api/feeds' + (category ? '/?category=' + category : ''), (data) => {
+                this.actions.setFeeds(data, (!category ? true : false));
+            });
         }
     }
 
     /**
      * Update feeds state
      */
-    setFeeds(feeds) {
-        return feeds;
+    setFeeds(feeds, persistent) {
+        return {data: feeds, persistent: persistent};
     }
 
 }

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 class Feed(models.Model):
-    url = models.CharField(max_length=255)
+    url = models.CharField(max_length=255, unique=True)
     category = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     excerpt = models.CharField(max_length=255)
