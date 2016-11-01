@@ -1,7 +1,10 @@
 from __future__ import unicode_literals
-
+from django.utils import timezone
 from django.db import models
 
+"""
+
+"""
 class Feed(models.Model):
     url = models.CharField(max_length=255, unique=True)
     category = models.CharField(max_length=255)
@@ -10,7 +13,7 @@ class Feed(models.Model):
     image = models.CharField(max_length=255)
     author_name = models.CharField(max_length=255)
     author_avatar = models.CharField(max_length=255)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now)
 
     class Meta:
         ordering = ['-created']
