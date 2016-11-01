@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import {Router, Route, Redirect, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, Redirect, IndexRoute, browserHistory} from 'react-router';
 
 // Tap Event for React
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -18,7 +18,7 @@ injectTapEventPlugin();
 if(document.getElementById('ckl-challenge-app')) {
 
     ReactDOM.render((
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
             <Route path="/" component={AppLayout}>
                 <IndexRoute component={CKLChallengeIndex} />
                 <Route path="*" component={NotFound}/>
