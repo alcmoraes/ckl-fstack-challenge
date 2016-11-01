@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from crunchspider.items import FeedItem
+from datetime import datetime
 
 # TechcrunchSpider
 #
@@ -31,5 +32,5 @@ class TechcrunchSpider(scrapy.Spider):
                 feedItem['author_name'] = feed.css('.block-content .byline a::text').extract_first()
                 # Here we cut the excerpt at character 230 and add an ellipsis
                 feedItem['excerpt'] = feed.css('.block-content .excerpt::text').extract_first()[:230] + "..."
-                feedItem['created'] = feed.css('.block-content .byline time::attr(datetime)').extract_first()
+                feedItem['created'] = datetime.strptime(feed.css('.block-content .byline time::attr(datetime)').extract_first(), "%Y-%m-%d %H:%M:%S")
                 yield feedItem
