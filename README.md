@@ -39,19 +39,21 @@ In order to do that, open a terminal window and execute
 
     node_modules/gulp/bin/gulp.js watch
 
-An interative shell will keep opened and each time you save an asset, the respective task to compile it will run.
+An interactive shell will keep opened and each time you save an asset, the respective task to compile it will run.
 
 ### Production assets
 
 If you're compiling assets for production you may want to add ```NODE_ENV=production``` after each ```Gulp``` command.
 
-*e.g.: NODE_ENV=production node_modules/gulp/bin/gulp.js*
+e.g.:
+
+    NODE_ENV=production node_modules/gulp/bin/gulp.js
 
 ## Running the project
 
 Run ```docker-compose up -d``` to get your containers up.
 
-After that, you may want to execute the migration of the database by executing
+After that, you need to execute the database migration by executing
 
     docker exec -it [app_container_id] python manage.py migrate
 
