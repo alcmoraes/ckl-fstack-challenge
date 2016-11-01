@@ -1,5 +1,7 @@
 # Cheesecake Labs - Fullstack Challenge
 
+[![Build Status](https://travis-ci.org/alcmoraes/ckl-fstack-challenge.svg?branch=development)](https://travis-ci.org/alcmoraes/ckl-fstack-challenge)
+
 ## Requirements
 
 - Docker
