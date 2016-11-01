@@ -70,6 +70,11 @@ class CKLNavBarComponent extends React.Component {
                                         <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.state.category != cat ? this.onMenuClick.bind(this, cat) : this.toggleNav} href="javascript:void(0)">{cat.toUpperCase()}</a>
                                     </li>)
                                 )}
+                                {this.uniqueCategories().splice(5).map((cat, i) =>
+                                    (<li className="mobile-category" key={i}>
+                                        <a className={this.state.category == cat ? "active" : ""} onTouchTap={this.state.category != cat ? this.onMenuClick.bind(this, cat) : this.toggleNav} href="javascript:void(0)">{cat.toUpperCase()}</a>
+                                    </li>)
+                                )}
                             </ul>
                         </div>
                     </div>

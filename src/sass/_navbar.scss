@@ -90,6 +90,9 @@
             float: right!important;
             .nav {
                 &> li {
+                    &.mobile-category {
+                        display: none;
+                    }
                     &> a {
                         padding: 17px 15px;
                     }
