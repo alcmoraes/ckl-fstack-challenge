@@ -97,7 +97,7 @@ e.g.:
 
 In case you get any dependency error, you can try to install pip requirements again.
 
-    docker exec [app_container_id] pip install -i requirements.txt
+    docker exec [app_container_id] pip install -r requirements.txt
 
 ### The first time
 
