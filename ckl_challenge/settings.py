@@ -25,7 +25,9 @@ SECRET_KEY = 'j=+00bw6+f_-^g)4%6aaz1lcz1ryua6kbxl&r&&7x6a+28at3m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "labs.techcrunch.doisbit.com"
+]
 
 
 # Application definition
