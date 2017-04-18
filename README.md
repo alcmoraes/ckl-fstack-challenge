@@ -1,5 +1,7 @@
 # Cheesecake Labs - Fullstack Challenge
 
+**Obs.: This was a challenge made by @alcmoraes for Cheesecake Labs agency**
+
 ## Requirements
 
 - Docker
