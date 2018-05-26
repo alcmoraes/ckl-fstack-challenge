@@ -2,6 +2,8 @@
 
 **Obs.: This was a challenge made by @alcmoraes for Cheesecake Labs agency**
 
+[![Code Climate](https://codeclimate.com/github/alcmoraes/labs-techcrunch/badges/gpa.svg)](https://codeclimate.com/github/alcmoraes/labs-techcrunch)
+
 ## Requirements
 
 - Docker
